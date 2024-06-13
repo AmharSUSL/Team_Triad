@@ -1,0 +1,252 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container-flex {
+    display: flex;
+    height: 100vh;
+}
+
+.sidebar {
+    width: 300px;
+    background-color: #00223A;
+    color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+    padding: 10px 20px; 
+}
+
+.logo img {
+    max-width: 60px;
+    margin-right: 20px;
+}
+
+.logo p {
+    font-size: 1.5em;
+    margin: 0;
+}
+
+.nav-list {
+    list-style-type: none;
+    padding: 0;
+    width: 100%;
+}
+
+.nav-list li {
+    width: 100%;
+}
+
+.nav-list li a {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    color: #000;
+    background-color: #fff;
+    text-decoration: none;
+    text-align: center;
+    margin: 15px 30px;
+    border-radius: 5px;
+}
+.nav-list li a img {
+    max-width: 20px;
+    margin-right: 10px;
+}
+
+.nav-list li a p {
+    margin: 0;
+}
+.nav-list li a:hover {
+    background-color: #FFBB00;
+}
+
+.nav-list .clicked{
+    background-color: #FFBB00
+}
+
+.main-content {
+    margin-left: 300px;  
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto; 
+}
+
+.navbar {
+    height: 60px;
+    background-color: #5D7285;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 20px;
+}
+
+ 
+.navbar img{
+    height: 40px;
+}
+.profile {
+    margin-right: 10px;
+}
+
+.profile button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.profile button:hover {
+    background-color: #45a049;
+}
+
+.big-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 300px;
+    background-color: #f1f1f1;
+    margin: 20px 0;
+}
+
+.mini-box {
+    width: 100px;
+    height: 100px;
+    background-color: #ccc;
+    margin: 0 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.flex-container p {
+    flex: 1;
+    margin:10px;
+    text-align: center;
+    padding: 10px;
+    font-size: 25px;
+    font-weight: bold;
+    border-radius: 10px;
+}
+.flex-container-wrapper {
+    margin: 20px 0;
+}
+.flex-container #container1 p {
+    background-color: #5cb85c;
+    color: white;
+}
+
+.flex-container #container2 p {
+    background-color: #f0ad4e;
+    color: white;
+}
+
+.flex-container #container3 p {
+    background-color: #d9534f;
+    color: white;
+}
+.table {
+    border-collapse: collapse;
+    width: 100%;
+}
+th, td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+th {
+    background-color: #f2f2f2;
+}
+
+.search-container {
+    position: relative;
+}
+
+.search-bar {
+    width: 250px;
+    padding: 10px 30px 10px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.search-button {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.search-button svg {
+    width: 24px;
+    height: 24px;
+}
+
+.editor-container {
+    max-width: 90%;
+    margin: 0 auto;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.toolbar {
+    background-color: white;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    max-width: 90%;
+    border: 5px;
+}
+
+.toolbar button {
+    background-color: white;
+    border: 5px;
+    color: black;
+    padding: 10px;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.toolbar button:hover {
+    background-color: #555;
+}
+
+.editor {
+    min-height: 500px;
+    padding: 20px;
+    border-top: 1px solid #ddd;
+}

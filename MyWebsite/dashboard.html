@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <!-- FullCalendar CSS -->
+  <link href='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css' rel='stylesheet' />
+  <link href='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.print.css' rel='stylesheet' media='print' />
+  
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- jQuery, Moment.js, and FullCalendar JS -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js'></script>
+  <style>
+    /* body {
+      margin: 40px 10px;
+      padding: 0;
+      font-family: "Lucida Grande", Helvetica, Arial, Verdana, sans-serif;
+      font-size: 14px;
+    } */
+    #calendar {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+    <div class="container-flex">
+        <div class="sidebar">
+            <div class="logo">
+                <img src="img/sri-lanka-government-logo.png" alt="Logo">
+                <p>
+                    Passport Expiry 
+                    <br/>Alert System</p>
+            </div>
+            <ul class="nav-list">
+                <li ><a href="dashboard.html" class="clicked">
+                    <img src="img/Home.png" alt="Dashboard Icon">
+                    <p>Dashboard</p>
+                </a></li>
+                <li><a href="userdetail.html">
+                    <img src="img/userimage.png" alt="Reports Icon">
+                    <p>User Details</p>
+                </a></li>
+                <li><a href="textEditor.html">
+                    <img src="img/4400433 1.png" alt="Settings Icon">
+                    <p>Text Editor</p>
+                </a></li>
+               
+               <!-- <li><a href="#">
+                    <img src="img/Leading Icon.png" alt="Logout">
+                    <p>Logout</p>
+                </a></li> -->
+            </ul>
+            
+            <ul class="nav-list logout">
+                <li>
+                    <a href="logout.html">
+                        <img src="img/4400433 1.png" alt="Logout Icon">
+                        <p>Logout</p>
+                    </a>
+                </li>
+            </ul>
+            
+            
+        </div>
+        <div class="main-content">
+            <div class="navbar">
+                <div class=""></div>
+               <img src="img/Mask Group.png" alt="Profile">
+            </div>
+            
+
+            <div class="container-fluid">
+                <div class=" m-4">
+                    <div class="border p-4 rounded">
+                        <div class="row mb-3">
+                            <div class="flex-container">
+                                <div class="col-4" id="container1"> 
+                                <p>UP-TO-DATE: 0</p>
+                            </div>
+                            <div class="col-4" id="container2"> 
+                                <p>NEAR-EXPIRY: 0</p>
+                            </div>
+                                <div class="col-4" id="container3"> 
+                                <p>EXPIRED : 0</p>
+                            </div>
+                            </div>
+                        </div>
+                        <div class="container mt-5">
+                            <div class="row">
+                                <div id='calendar' class="col-8"></div>
+                                <div class="col-4">
+                                    <div class="">
+                                        <div class="card" style="border-radius: 20px;">
+                                            <div class="card-header"><p class="h2">Status</p></div>
+                                            <div class="card-body">
+                                                <div class="d-flex pb-4">
+                                                    <div class="w-100 bd-highlight">EXPIRED</div>
+                                                    <div class="px-2 bg-danger rounded">0%</div>
+                                                  </div>
+                                                  <div class="d-flex pb-4">
+                                                    <div class="w-100 bd-highlight">NEAR EXPIRY</div>
+                                                    <div class="px-2   rounded bg-warning">0%</div>
+                                                  </div>
+                                                  <div class="d-flex  pb-4">
+                                                    <div class=" w-100 bd-highlight">UP-TO-DATE</div>
+                                                    <div class="px-2   bd-highlight rounded bg-success">0%</div>
+                                                  </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           
+           
+                      
+            </div>
+     
+    </div>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function() {
+          $('#calendar').fullCalendar({
+            header: {
+              left: 'prev,next today',
+              center: 'title',
+              right: 'month,basicWeek,basicDay'
+            },
+            defaultDate: '2015-02-12',
+            editable: true,
+            eventLimit: true, // allow "more" link when too many events
+            events: [
+            //   {
+            //     title: 'All Day Event',
+            //     start: '2015-02-01'
+            //   },
+            //   {
+            //     title: 'Long Event',
+            //     start: '2015-02-07',
+            //     end: '2015-02-10'
+            //   },
+            //   {
+            //     id: 999,
+            //     title: 'Repeating Event',
+            //     start: '2015-02-09T16:00:00'
+            //   },
+            //   {
+            //     id: 999,
+            //     title: 'Repeating Event',
+            //     start: '2015-02-16T16:00:00'
+            //   },
+            //   {
+            //     title: 'Conference',
+            //     start: '2015-02-11',
+            //     end: '2015-02-13'
+            //   },
+              
+            //   {
+            //     title: 'Meeting',
+            //     start: '2015-02-12T14:30:00'
+            //   },
+            //   {
+            //     title: 'Happy Hour',
+            //     start: '2015-02-12T17:30:00'
+            //   },
+            //   {
+            //     title: 'Dinner',
+            //     start: '2015-02-12T20:00:00'
+            //   },
+            //   {
+            //     title: 'Birthday Party',
+            //     start: '2015-02-13T07:00:00'
+            //   },
+            //   {
+            //     title: 'Click for Google',
+            //     url: 'http://google.com/',
+            //     start: '2015-02-28'
+            //   }
+            ]
+          });
+        });
+      </script>
+
+</body>
+</html>
